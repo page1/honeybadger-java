@@ -1,0 +1,19 @@
+apply plugin: 'java'
+jar.archiveName = "Honeybadger.jar"
+
+sourceSets {
+  main {
+    java {
+      srcDir "src"
+    }
+  }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'log4j:log4j:1.2.17', 
+            'com.google.code.gson:gson:2.2.4'
+}
