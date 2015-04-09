@@ -6,7 +6,7 @@
   HONEYBADGER_API_KEY ... Your honeybadger api key found in the settings page
   JAVA_ENV ... probably development or production
 */
-package Honeybadger;
+package honeybadger;
 import java.util.concurrent.*;
 import java.io.*;
 import com.google.gson.*;
