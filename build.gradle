@@ -32,5 +32,6 @@ repositories {
 
 dependencies {
     compile 'log4j:log4j:1.2.17', 
-            'com.google.code.gson:gson:2.2.4'
+            'com.google.code.gson:gson:2.2.4',
+            'org.apache.commons:commons-lang3:3.0'
 }
