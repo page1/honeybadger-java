@@ -11,6 +11,28 @@ In order for this to work, you must have the following environmental variables s
     HONEYBADGER_API_KEY
     JAVA_ENV
 
+If you are using the log4j appender, JAVA_ENV can be set instead in the log4j.properties file.
+
 HONEYBADGER_API_KEY: Contains your Honeybadger api key. This is found in your projects settings on the Honeybadger web page.
 
 JAVA_ENV: Describes the environment where your program is running. I use development and production.
+
+
+log4j appender
+==============
+
+The HoneybadgerAppender is a log4j appender that reports log messages set to the ERROR level to Honeybadger.
+
+To use it, you will need to add a few lines to log4j.properties in addition to the environment variables
+required for the Honeybadger Java client. First, add HoneybadgerAppender as a root appender:
+
+    log4j.rootLogger=INFO, file, console [...], honeybadger
+
+Then set the appender, passing in sys properties if desired:
+
+    log4j.appender.honeybadger=honeybadger.HoneybadgerAppender
+    log4j.appender.honeybadger.Threshold=ERROR
+    log4j.appender.honeybadger.HoneybadgerAPIKey=${api_key}
+    log4j.appender.honeybadger.JavaEnv=${java_env}
+
+Note that, since HoneybadgerAppender instantiates Honeybadger, all uncaught exceptions will *also* be reported to Honeybadger.
