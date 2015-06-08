@@ -1,6 +1,5 @@
 /*
   @Author: Scott Page
-  @Company: StyleSeek
   @Brief: Catches any uncaught exceptions and sends them to honeybadger.
   You must set the following Env Vars
   HONEYBADGER_API_KEY ... Your honeybadger api key found in the settings page
